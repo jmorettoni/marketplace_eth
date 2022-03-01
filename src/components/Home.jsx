@@ -95,7 +95,7 @@ function Home() {
                   <h1 style={{width:"100%",textAlign:"center"}}>NFT Collection</h1> 
 
                   <p style={{textAlign:"center",width:"100%"}}>   
-                    <button className="btn btn-primary" onClick={mintTokenT}  >  Mint a Box {totalMinted} </button> 
+                    <button className="btn btn-primary" onClick={mintTokenT}  >Mint the Box {totalMinted} </button> 
                     <br/> <small>0.05 BNB</small>
                   </p>
 
