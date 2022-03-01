@@ -13,10 +13,12 @@ npm install
 npx hardhat
  
 
+#to run on localhost
+
+
 # terminal 1
 npx hardhat node
 
-#to run on localhost
 
 # terminal 2
 npx hardhat compile
