@@ -7,12 +7,31 @@ Node version : 14.17.1  <= X < 17
 ==========
  
 ```bash
+
 git clone <this-repo>
+
+
 npm install
 
 npx hardhat
- 
 
+
+/*
+If it is not, run npm install --save-dev hardhat or yarn add --dev hardhat
+
+Uninstall any global version of hardhat
+
+Remove node_modules and run npm install or yarn install to install all dependencies.
+
+Try running npx hardhat compile or npx hardhat node to check if it works.
+*/
+
+
+npx hardhat
+
+npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers @openzeppelin/contracts
+
+ 
 #to run on localhost
 
 
