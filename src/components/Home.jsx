@@ -21,11 +21,6 @@ const signer =  provider.getSigner();
 const contract = new ethers.Contract(contractAddressNFT, NFT_USE_PAYMENTS.abi, signer);
 const contractPayment = new ethers.Contract(  contractAddressPAY , PAYMENTS.abi, signer);
 
-
-let ASSET_PREFIX = process.env.ASSET_PREFIX || '';
-
-
-
  
 function Home() {
 
@@ -55,6 +50,40 @@ function Home() {
                     await result.wait(); 
               }
 
+
+              //////////
+
+                           let contentId = pinata_contentID;
+
+                           
+                           let metadataURI = `${contentId}/${totalMinted}.json`;
+                           const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}`;
+                      
+                          const [isMinted, setIsMinted] = useState(false);
+                          useEffect(() => {
+                            getMintedStatus();
+                          }, [isMinted]);
+
+                          const getMintedStatus = async () => {
+                            const result = await contract.isContentOwned(metadataURI);
+                            console.log(result)
+                            setIsMinted(result);
+                          };
+
+                          const mintTokenT = async () => {
+                                  const connection = contract.connect(signer);
+                                  const addr = connection.address;
+                                  const result = await contract.payToMint(addr, metadataURI, {
+                                    value: ethers.utils.parseEther('0.05'),
+                                  });
+
+                                 await result.wait();
+                                 getMintedStatus();
+                                 getCount();
+                          };
+ 
+
+              //////////
              
 
               return (
@@ -64,6 +93,13 @@ function Home() {
                   <WalletBalance />
 
                   <h1 style={{width:"100%",textAlign:"center"}}>NFT Collection</h1> 
+
+                  <p style={{textAlign:"center",width:"100%"}}>   
+                    <button className="btn btn-primary" onClick={mintTokenT}  >  Mint a Box {totalMinted} </button> 
+                    <br/> <small>0.05 BNB</small>
+                  </p>
+
+                  
                   <div className="container">
                     <div className="row">
                       {Array(totalMinted + 1)
@@ -126,7 +162,7 @@ function NFTImage({ tokenId, getCount }) {
 
   return (
     <div className="card" style={{ width: '18rem' }}>
-            <img className="card-img-top" src={isMinted ? imageURI : ASSET_PREFIX+'/img/placeholder.png'}></img>
+            <img className="card-img-top" src={isMinted ? imageURI : 'img/placeholder.png'}></img>
             <div className="card-body">
               <h5 className="card-title">ID #{tokenId}</h5>
               {!isMinted ? (
