@@ -16,6 +16,8 @@ npx hardhat
 # terminal 1
 npx hardhat node
 
+#to run on localhost
+
 # terminal 2
 npx hardhat compile
 npx hardhat run scripts/sample-script.js --network localhost
@@ -24,7 +26,7 @@ npx hardhat run scripts/sample-script.js --network localhost
 npm run dev
 ```
 
-Update the deployed NFT_USE_PAYMENTS contract address in `compoonents/Home.js` 
+Update the deployed NFT_USE_PAYMENTS contract address in `components/Home.js` 
 
 
 ===============
@@ -32,9 +34,14 @@ Update the deployed NFT_USE_PAYMENTS contract address in `compoonents/Home.js`
 REFERENCES:
 
 - to connect metamask wallet + mint a NFT  + list NFTs minted : 
+
 1.1 ) https://youtu.be/meTpMP0J5E8 
+
 1.2 ) https://fireship.io/lessons/web3-solidity-hardhat-react-tutorial 
 
+====
+
 2 to create a PaymentSPlitter contract and mint a NFT contract that use payment splitter 
+
 2.1 ) https://www.youtube.com/watch?v=b5sQt4F8voA
 
