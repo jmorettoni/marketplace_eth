@@ -6,9 +6,12 @@ import { ethers } from 'ethers';
 import NFT_USE_PAYMENTS from '../artifacts/contracts/NFT_USE_PAYMENTS.sol/NFT_USE_PAYMENTS.json';
 import PAYMENTS from '../artifacts/contracts/PAYMENTS.sol/PAYMENTS.json';
 
+ 
+const contractAddressNFT = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512'; //change this
+const contractAddressPAY = '0x5FbDB2315678afecb367f032d93F642f64180aa3'; //change this
+const pinata_contentID = "QmRc94SegEv64s44CZ4ERhdXdD7WQxFWUJs3pr8xZMkxkr"; //change this
+ 
 
-
-const contractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 
 
@@ -20,10 +23,9 @@ const userAddr = await signer.getAddress();
  
 console.log("THE SIGNER" , signer);
 
-const contract = new ethers.Contract(contractAddress, NFT_USE_PAYMENTS.abi, signer);
-const contractPayment = new ethers.Contract( '0x5FbDB2315678afecb367f032d93F642f64180aa3', PAYMENTS.abi, signer);
+const contract = new ethers.Contract(contractAddressNFT, NFT_USE_PAYMENTS.abi, signer);
+const contractPayment = new ethers.Contract(  contractAddressPAY , PAYMENTS.abi, signer);
 
- 
  
 function Home() {
 
@@ -39,9 +41,7 @@ function Home() {
                 setTotalMinted(parseInt(count));
               };
 
-
-
-             
+ 
 
               const withdrawPaymentSplit = async () => { 
                     const result = await contract.withdraw(); 
@@ -55,32 +55,7 @@ function Home() {
                     await result.wait(); 
               }
 
-              async  function startDeploy(){
-                      deployNFT().then(() => process.exit(0))
-                      .catch((error) => {
-                        console.error(error);
-                        process.exit(1);
-                      });
-              }
-
-              async function deployNFT(){
-            
-                       // We get the contract payments to deploy
-                        /////////////////////////////////////////////////////////////////
-                        const  PAYMENTS = await  ethers.getContractFactory("PAYMENTS");
-                        const  payments = await PAYMENTS.deploy(["0xaf4521fD334c9Fd8a02ba96740D8142a5adE1B28","0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199"], [90,10]); 
-                        console.log("Payments NFT deployed to:", payments.address);
-                        /////////////////////////////////////////////////////////////////
-
-
-                        // We get the contract create nft to deploy with the contract payment address included;
-                        const NFT_USE_PAYMENTS = await ethers.getContractFactory("NFT_USE_PAYMENTS");
-                        const nft_use_payments  = await NFT_USE_PAYMENTS.deploy(  payments.address ); 
-                        console.log("NFT_USE_PAYMENTS (PAYMENT CONTRACT :"+payments.address+") NFT deployed to: ", nft_use_payments.address);
-                        
-              }
-            
-
+             
 
               return (
                 <div>
@@ -88,7 +63,7 @@ function Home() {
 
                   <WalletBalance />
 
-                  <h1 style={{width:"100%",textAlign:"center"}}>MARS EXPLORE Collection</h1>
+                  <h1 style={{width:"100%",textAlign:"center"}}>NFT Collection</h1> 
                   <div className="container">
                     <div className="row">
                       {Array(totalMinted + 1)
@@ -111,7 +86,7 @@ function Home() {
 
 function NFTImage({ tokenId, getCount }) {
 
-  const contentId = 'QmRc94SegEv64s44CZ4ERhdXdD7WQxFWUJs3pr8xZMkxkr';
+  const contentId = pinata_contentID;
   const metadataURI = `${contentId}/${tokenId}.json`;
   //const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.png`;
   const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}`;

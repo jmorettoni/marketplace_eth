@@ -17,14 +17,14 @@ async function main() {
     /////////////////////////////////////////////////////////////////
      const  PAYMENTS = await hre.ethers.getContractFactory("PAYMENTS");
      const  payments = await PAYMENTS.deploy(["0xaf4521fD334c9Fd8a02ba96740D8142a5adE1B28","0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199"], [90,10]); 
-     console.log("Payments NFT deployed to:", payments.address);
+    //console.log("PAYMENTS deployed to:", payments.address);
     /////////////////////////////////////////////////////////////////
 
 
     // We get the contract create nft to deploy with the contract payment address included;
      const NFT_USE_PAYMENTS = await hre.ethers.getContractFactory("NFT_USE_PAYMENTS");
      const nft_use_payments  = await NFT_USE_PAYMENTS.deploy(  payments.address ); 
-     console.log("NFT_USE_PAYMENTS (PAYMENT CONTRACT :"+payments.address+") NFT deployed to: ", nft_use_payments.address);
+     console.log("NFT_USE_PAYMENTS deployed to: "+ nft_use_payments.address+" (USING PAYMENT CONTRACT :"+payments.address+")" );
      
 }
 
