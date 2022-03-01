@@ -14,25 +14,30 @@ const pinata_contentID = "QmRc94SegEv64s44CZ4ERhdXdD7WQxFWUJs3pr8xZMkxkr"; //cha
 
 
 
-let provider = ""; 
-let signer =  "";  
-let contract = "";
-let contractPayment = "";
+let provider  ; 
+let signer ;  
+let contract ;
+let contractPayment ;
       
 
 ////VERIFY IF METAMASK INSTALLL
-window.addEventListener('load', function () {
+window.addEventListener('load', load => {
   if (typeof web3 !== 'undefined') {
+
       console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
-      window.web3 = new Web3(web3.currentProvider);
+      //window.web3 = new Web3(web3.currentProvider);
 
        provider = new ethers.providers.Web3Provider(window.ethereum); 
        signer =  provider.getSigner();  
        contract = new ethers.Contract(contractAddressNFT, NFT_USE_PAYMENTS.abi, signer);
        contractPayment = new ethers.Contract(  contractAddressPAY , PAYMENTS.abi, signer); 
+       
   } else {
+
       console.log('No Web3 Detected... using HTTP Provider')
-      window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/noapikey")); 
+      //window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/noapikey")); 
+
+
   }
 })
 ////VERIFY IF METAMASK INSTALLL
