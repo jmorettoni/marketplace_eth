@@ -7,8 +7,8 @@ import NFT_USE_PAYMENTS from '../artifacts/contracts/NFT_USE_PAYMENTS.sol/NFT_US
 import PAYMENTS from '../artifacts/contracts/PAYMENTS.sol/PAYMENTS.json';
 
  
-const contractAddressNFT = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512'; //change this
-const contractAddressPAY = '0x5FbDB2315678afecb367f032d93F642f64180aa3'; //change this
+const contractAddressNFT = '0x7110307Da8fA86A8D857B0101140B76032B01A12'; //change this
+const contractAddressPAY = '0x4B8deC981f2133332319810c8D35042f03821665'; //change this
 const pinata_contentID = "QmRc94SegEv64s44CZ4ERhdXdD7WQxFWUJs3pr8xZMkxkr"; //change this
  
 
