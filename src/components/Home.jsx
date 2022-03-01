@@ -53,10 +53,10 @@ function Home() {
 
               //////////
 
-                           let contentId = pinata_contentID;
-
+                           let contentId = pinata_contentID; 
                            
                            let metadataURI = `${contentId}/${totalMinted}.json`;
+                           
                            const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}`;
                       
                           const [isMinted, setIsMinted] = useState(false);
@@ -80,9 +80,7 @@ function Home() {
                                  await result.wait();
                                  getMintedStatus();
                                  getCount();
-                          };
- 
-
+                          }; 
               //////////
              
 
@@ -91,12 +89,18 @@ function Home() {
 
 
                   <WalletBalance />
+ 
+                  <div style={{position:"absolute" , top:'50px' , right:'20px'}}>
+                  <button  style={{   marginRight:"10px" }} className="btn btn-primary" onClick={withdrawPaymentSplit}>withdraw NFT</button> 
+                  <button style={{   }} className="btn btn-primary" onClick={releasePaymentSplit}>release Payment</button> 
+                 </div>
 
                   <h1 style={{width:"100%",textAlign:"center"}}>NFT Collection</h1> 
 
                   <p style={{textAlign:"center",width:"100%"}}>   
                     <button className="btn btn-primary" onClick={mintTokenT}  >Mint the Box {totalMinted} </button> 
-                    <br/> <small>0.05 BNB</small>
+                      <br/>
+                    <small>0.05 BNB</small> 
                   </p>
 
                   
@@ -111,11 +115,7 @@ function Home() {
                         ))}
                     </div>
                   </div>
-                  <br/><br/> 
-              
-                  <button className="btn btn-primary" onClick={withdrawPaymentSplit}>withdraw NFT</button> 
-                  <br/><br/>
-                  <button className="btn btn-primary" onClick={releasePaymentSplit}>release Payment</button> 
+                  <br/><br/>  
                 </div>
               );
 }
@@ -126,8 +126,7 @@ function NFTImage({ tokenId, getCount }) {
   const metadataURI = `${contentId}/${tokenId}.json`;
   //const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.png`;
   const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}`;
-//   const imageURI = `img/${tokenId}.png`;
-
+ 
   const [isMinted, setIsMinted] = useState(false);
   useEffect(() => {
     getMintedStatus();
