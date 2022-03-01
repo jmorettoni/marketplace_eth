@@ -5,6 +5,10 @@ RESUME :
 
 Node version : 14.17.1  <= X < 17
 ==========
+
+see the demo here : https://marketplace-nft-navy.vercel.app/
+
+==========
  
 ```bash
 
