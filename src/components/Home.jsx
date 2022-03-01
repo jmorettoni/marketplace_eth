@@ -46,7 +46,7 @@ function Home() {
               const releasePaymentSplit = async () => {  
                     const signer = await provider.getSigner();
                     const userAddr = await signer.getAddress();  
-                     const result = await contractPayment.release_eth(userAddr); 
+                    const result = await contractPayment.release_eth(userAddr); 
                     await result.wait(); 
               }
 
