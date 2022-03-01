@@ -21,6 +21,11 @@ const signer =  provider.getSigner();
 const contract = new ethers.Contract(contractAddressNFT, NFT_USE_PAYMENTS.abi, signer);
 const contractPayment = new ethers.Contract(  contractAddressPAY , PAYMENTS.abi, signer);
 
+
+let ASSET_PREFIX = process.env.ASSET_PREFIX || '';
+
+
+
  
 function Home() {
 
@@ -121,7 +126,7 @@ function NFTImage({ tokenId, getCount }) {
 
   return (
     <div className="card" style={{ width: '18rem' }}>
-            <img className="card-img-top" src={isMinted ? imageURI : '/img/placeholder.png'}></img>
+            <img className="card-img-top" src={isMinted ? imageURI : ASSET_PREFIX+'/img/placeholder.png'}></img>
             <div className="card-body">
               <h5 className="card-title">ID #{tokenId}</h5>
               {!isMinted ? (
