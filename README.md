@@ -109,3 +109,8 @@ https://docs.binance.org/smart-chain/developer/deploy/hardhat.html
 
 https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 
+
+5 - add funds to test in binance testnet
+
+ Add funds to testnet :  https://testnet.binance.org/faucet-smart
+
