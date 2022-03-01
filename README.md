@@ -1,4 +1,4 @@
-he demo contains a basic web3 app and smart contract for minting NFTs.
+This demo contains a basic web3 app and smart contract for minting NFTs.
 
 
 RESUME :
