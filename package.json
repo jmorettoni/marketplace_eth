@@ -2,7 +2,7 @@
   "name": "web3app",
   "version": "0.0.0",
   "scripts": {
-    "predeploy": "vite build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d vite build",
     "dev": "vite",
     "build": "vite build",
