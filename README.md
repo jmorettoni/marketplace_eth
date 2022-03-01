@@ -61,14 +61,18 @@ ps2 : to run  the withdral   function connect  the "Account #0"  in your metamas
 
 ps 3 : to run the release function connect with the  metamaskt with the account that have share defined on the 
 
-
+ps 3 : to use binance : 
+- create a secrets.js with the follow structure and save on the root folder ;
+{
+  "mnemonic": "YOUR 12 WORDS SECRET FROM YOUR WALLET"
+}
 //////////
 
 
 
 REFERENCES:
 
-- to connect metamask wallet + mint a NFT  + list NFTs minted : 
+1 - to connect metamask wallet + mint a NFT  + list NFTs minted : 
 
 1.1 ) https://youtu.be/meTpMP0J5E8 
 
@@ -76,7 +80,13 @@ REFERENCES:
 
 ====
 
-2 to create a PaymentSPlitter contract and mint a NFT contract that use payment splitter 
+2 - to create a PaymentSPlitter contract and mint a NFT contract that use payment splitter 
 
 2.1 ) https://www.youtube.com/watch?v=b5sQt4F8voA
+
+
+====
+
+3 - to  use binance network  
+https://docs.binance.org/smart-chain/developer/deploy/hardhat.html
 
