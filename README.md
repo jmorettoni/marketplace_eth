@@ -62,10 +62,15 @@ ps2 : to run  the withdral   function connect  the "Account #0"  in your metamas
 ps 3 : to run the release function connect with the  metamaskt with the account that have share defined on the 
 
 ps 3 : to use binance : 
+
 - create a secrets.js with the follow structure and save on the root folder ;
+
 {
+
   "mnemonic": "YOUR 12 WORDS SECRET FROM YOUR WALLET"
+
 }
+
 //////////
 
 
@@ -88,5 +93,13 @@ REFERENCES:
 ====
 
 3 - to  use binance network  
+
 https://docs.binance.org/smart-chain/developer/deploy/hardhat.html
+
+======
+
+
+4 - to host react project on githun
+
+https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 
