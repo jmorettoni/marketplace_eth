@@ -23,6 +23,5 @@
     "gh-pages": "^3.2.3",
     "hardhat": "^2.8.4",
     "vite": "^2.7.2"
-  },
-  "homepage": "http://jmorettoni.github.io/marketplace_nft"
+  }
 }
