@@ -16,7 +16,11 @@ async function main() {
     // We get the contract payments to deploy
     /////////////////////////////////////////////////////////////////
      const  PAYMENTS = await hre.ethers.getContractFactory("PAYMENTS");
-     const  payments = await PAYMENTS.deploy(["0xaf4521fD334c9Fd8a02ba96740D8142a5adE1B28","0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199"], [90,10]); 
+    
+      const shareAddrs = ["0xaf4521fD334c9Fd8a02ba96740D8142a5adE1B28","0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199"]; //change this with you contract share
+      const sharePct = [90,10];      //change this with you contract share 
+      
+      const  payments = await PAYMENTS.deploy(shareAddrs, sharePct); 
     //console.log("PAYMENTS deployed to:", payments.address);
     /////////////////////////////////////////////////////////////////
 

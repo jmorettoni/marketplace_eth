@@ -53,6 +53,12 @@ npm run dev
 Update the deployed NFT_USE_PAYMENTS contract address in `components/Home.js` 
 
 
+//////////
+to run  the withdral   function connect  the "Account #0"  in your metamask and login with it. 
+
+to run the release function connect with the  metamaskt with the account that have share defined on the 
+
+
 ===============
 
 REFERENCES:
