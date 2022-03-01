@@ -16,13 +16,8 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
 
 
 // get the end user
-const signer = await provider.getSigner();
-const userAddr = await signer.getAddress();
-// get the smart contract
-
+const signer =  provider.getSigner(); 
  
-console.log("THE SIGNER" , signer);
-
 const contract = new ethers.Contract(contractAddressNFT, NFT_USE_PAYMENTS.abi, signer);
 const contractPayment = new ethers.Contract(  contractAddressPAY , PAYMENTS.abi, signer);
 
@@ -51,7 +46,7 @@ function Home() {
               const releasePaymentSplit = async () => {  
                     const signer = await provider.getSigner();
                     const userAddr = await signer.getAddress();  
-                    const result = await contractPayment.release_eth(userAddr); 
+                     const result = await contractPayment.release_eth(userAddr); 
                     await result.wait(); 
               }
 
