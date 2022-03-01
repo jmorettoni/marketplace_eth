@@ -17,17 +17,20 @@ npx hardhat
 
 
 /*
-If it is not, run npm install --save-dev hardhat or yarn add --dev hardhat
+If it is not, run $: npm install --save-dev hardhat or yarn add --dev hardhat
 
-Uninstall any global version of hardhat
+and try again $: npx hardhat
 
-Remove node_modules and run npm install or yarn install to install all dependencies.
+If the error persist try : 
 
-Try running npx hardhat compile or npx hardhat node to check if it works.
+- Uninstall any global version of hardhat
+
+- Remove node_modules and run npm install or yarn install to install all dependencies.
+
+and try again $: npx hardhat
+
 */
-
-
-npx hardhat
+ 
 
 npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers @openzeppelin/contracts
 
