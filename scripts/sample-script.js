@@ -18,8 +18,16 @@ async function main() {
     /////////////////////////////////////////////////////////////////
      /////////////////////////CHANGE THE SHARE config  bellow /////////// 
       /////////////////////////////////////////////////////////////////
-      const shareAddrs = ["0xaf4521fD334c9Fd8a02ba96740D8142a5adE1B28","0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199"]; //change this with you contract share
-      const sharePct = [90,10];      //change this with you contract share 
+      //change this with you contract share
+      const shareAddrs = [
+        "0xaf4521fD334c9Fd8a02ba96740D8142a5adE1B28", //the first address that will receive share
+        "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199" //the second address that will receive share
+      ]; 
+      //change this with you contract share 
+      const sharePct = [
+        90, //pct to the first address
+        10  //pct to the second address
+      ];     
     /////////////////////////////////////////////////////////////////
     /////////////////////////CHANGE THE SHARE config  above //////// 
     /////////////////////////////////////////////////////////////////
