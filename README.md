@@ -65,11 +65,13 @@ ps 3 : to use binance :
 
 - create a secrets.js with the follow structure and save on the root folder ;
 
+```bash
 {
 
   "mnemonic": "YOUR 12 WORDS SECRET FROM YOUR WALLET"
 
 }
+```
 
 //////////
 
