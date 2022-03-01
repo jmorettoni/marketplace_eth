@@ -11,38 +11,29 @@ const contractAddressNFT = '0x7110307Da8fA86A8D857B0101140B76032B01A12'; //chang
 const contractAddressPAY = '0x4B8deC981f2133332319810c8D35042f03821665'; //change this
 const pinata_contentID = "QmRc94SegEv64s44CZ4ERhdXdD7WQxFWUJs3pr8xZMkxkr"; //change this
  
-
-
-
-let provider  ; 
-let signer ;  
-let contract ;
-let contractPayment ;
-      
-
-////VERIFY IF METAMASK INSTALLL
-window.addEventListener('load', load => {
-  if (typeof web3 !== 'undefined') {
-
-      console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
-      //window.web3 = new Web3(web3.currentProvider);
-
-       provider = new ethers.providers.Web3Provider(window.ethereum); 
-       signer =  provider.getSigner();  
-       contract = new ethers.Contract(contractAddressNFT, NFT_USE_PAYMENTS.abi, signer);
-       contractPayment = new ethers.Contract(  contractAddressPAY , PAYMENTS.abi, signer); 
-       
-  } else {
-
-      console.log('No Web3 Detected... using HTTP Provider')
-      //window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/noapikey")); 
-
-
-  }
-})
-////VERIFY IF METAMASK INSTALLL
-
  
+
+ let provider; 
+
+ try{
+  provider = new ethers.providers.Web3Provider(window.ethereum); 
+  } catch(e) { 
+    console.error(e);
+}
+
+
+ let signer ; 
+ let contract ;
+ let contractPayment ; 
+
+
+ if( provider != null ){
+   signer =  provider.getSigner(); 
+   contract = new ethers.Contract(contractAddressNFT, NFT_USE_PAYMENTS.abi, signer);
+   contractPayment = new ethers.Contract(  contractAddressPAY , PAYMENTS.abi, signer); 
+ }
+
+
  
 function Home() {
 
