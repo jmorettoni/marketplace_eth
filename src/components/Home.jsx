@@ -13,25 +13,20 @@ const pinata_contentID = "QmRc94SegEv64s44CZ4ERhdXdD7WQxFWUJs3pr8xZMkxkr"; //cha
  
  
 
- let provider; 
-
- try{
-  provider = new ethers.providers.Web3Provider(window.ethereum); 
-  } catch(e) { 
-    console.error(e);
-}
-
-
+ let provider;  
  let signer ; 
  let contract ;
  let contractPayment ; 
 
 
- if( provider != null ){
-   signer =  provider.getSigner(); 
-   contract = new ethers.Contract(contractAddressNFT, NFT_USE_PAYMENTS.abi, signer);
-   contractPayment = new ethers.Contract(  contractAddressPAY , PAYMENTS.abi, signer); 
- }
+ try{
+  provider = new ethers.providers.Web3Provider(window.ethereum); 
+  signer =  provider.getSigner(); 
+  contract = new ethers.Contract(contractAddressNFT, NFT_USE_PAYMENTS.abi, signer);
+  contractPayment = new ethers.Contract(  contractAddressPAY , PAYMENTS.abi, signer); 
+  } catch(e) { 
+    console.error(e);
+}
 
 
  
