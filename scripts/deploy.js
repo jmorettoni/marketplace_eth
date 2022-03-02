@@ -21,7 +21,7 @@ async function main() {
       //change this with you contract share
       const shareAddrs = [
         "0xaf4521fD334c9Fd8a02ba96740D8142a5adE1B28", //the first address that will receive share
-        "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199" //the second address that will receive share
+        "0x9CC62A0306EcF10063e5bAc91DFf5487E113F59D" //the second address that will receive share
       ]; 
       //change this with you contract share 
       const sharePct = [

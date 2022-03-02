@@ -6,11 +6,20 @@ import { ethers } from 'ethers';
 import NFT_USE_PAYMENTS from '../artifacts/contracts/NFT_USE_PAYMENTS.sol/NFT_USE_PAYMENTS.json';
 import PAYMENTS from '../artifacts/contracts/PAYMENTS.sol/PAYMENTS.json';
 
- 
-const contractAddressNFT = '0x9224A43819123dC916C054949D2629f13A9a69f1'; //change this
-const contractAddressPAY = '0x7Dc0A0658e2709695C75f3A802f357dDCbD1be0a'; //change this
+
+
+ ///////////////////////////////////////
+ ///////////////////////////////////////
+ ///////////////////////////////////////
+ ///////////////////////////////////////
+const contractAddressNFT = '0x9b0d879B7826e02ba252cbc90fC2f458950907bc'; //change this
+const contractAddressPAY = '0x223662aCb7B0FB42F18fe1918EaCF91171Acc4dA'; //change this
+
 const pinata_contentID = "QmRc94SegEv64s44CZ4ERhdXdD7WQxFWUJs3pr8xZMkxkr"; //change this
- 
+ ///////////////////////////////////////
+ ///////////////////////////////////////
+ ///////////////////////////////////////
+ ///////////////////////////////////////
  
 
  let provider;  
