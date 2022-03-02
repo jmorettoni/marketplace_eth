@@ -3,7 +3,7 @@ This demo contains a basic web3 app and smart contract for minting NFTs.
 
 RESUME :
 
-Node version : 14.17.1  <= X < 17
+Node version : 16.14.0
 ==========
 
 see the demo here : https://marketplace-nft-navy.vercel.app/
@@ -35,9 +35,8 @@ and try again $: npx hardhat
 
 */
  
-
+ 
 npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers @openzeppelin/contracts
-
  
 #to run on localhost
 
@@ -48,15 +47,28 @@ npx hardhat node
 
 # terminal 2
 npx hardhat compile
-npx hardhat run scripts/sample-script.js --network localhost
+
+#if you want use localhost
+npx hardhat run scripts/deploy.js --network localhost
+
+#if you want use binance testnet
+npx hardhat run --network testnet scripts/deploy.js
+
 
 # terminal 3 
 npm run dev
 ```
 
-Update the deployed NFT_USE_PAYMENTS contract address in `components/Home.js` 
+
+//////////
 
 
+Update the deployed NFT_USE_PAYMENTS AND THE PAYMENTS contract addresses in `components/Home.js` 
+
+
+#to change the NFT image, you  also need to change the pinata_contentID . 
+ 
+ 
 //////////
 
 ps1 : edit the wallets that will receive the share in the scripts/sample-script.js
